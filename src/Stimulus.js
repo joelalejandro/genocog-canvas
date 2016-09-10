@@ -141,6 +141,7 @@ class Stimulus {
   getCanvas() {
     const w = this.options.width,
           h = this.options.height;
+    const canvas = typeof window === 'undefined' ? Canvas : window.document.createElement('canvas');
     return new Canvas(w, h);
   }
 }
