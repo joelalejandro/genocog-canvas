@@ -7,4 +7,4 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-export Greeting from './Stimulus.js';
+export Stimulus from './Stimulus.js';

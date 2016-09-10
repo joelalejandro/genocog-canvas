@@ -18,7 +18,7 @@ class Stimulus {
       frequency: 200 / 30,
       circleMask: 0.07,
       finalContrast: 10
-    }
+    };
 
     const THETA = Random.from0to(360);
     const PHASE = Random.from0to(1);
@@ -65,9 +65,18 @@ class Stimulus {
     const imageSize = Math.max(this.options.width, this.options.height);
 
     let frequency = this.options.frequency * 2 * Math.PI;
-    let X = [for (x of new Array(imageSize).keys()) x];
-    let X0 = [for (x of X) ((x / imageSize) - 0.05)];
-    let Xf = [for (x of X0) (x * frecuency)];
+    let X = [];
+
+    for (let x = 0; x < imageSize; x++) {
+      X[x] = x;
+    }
+
+    let X0 = [];
+
+    for (let x = 0; x < imageSize; x++) {
+      X0[x] = (X[x] / imageSize) - 0.05;
+    }
+
     let s = this.options.sigma / imageSize;
     let mask = [];
     let stimulus = [];
